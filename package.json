@@ -1,0 +1,30 @@
+{
+  "name": "weeklywebdevchallengeissue02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "prod": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pakos1/WeeklyWebDevChallengeIssue02.git"
+  },
+  "author": "pakos1337",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pakos1/WeeklyWebDevChallengeIssue02/issues"
+  },
+  "homepage": "https://github.com/pakos1/WeeklyWebDevChallengeIssue02#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.5",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
