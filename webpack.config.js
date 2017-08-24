@@ -28,7 +28,15 @@ const webpackConfig = {
                 use: ['css-loader', 'sass-loader'],
                 publicPath: "/dist"
             })
-        }]
+        }, {
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['env']
+              }
+        }}]
     },
     devServer: {
         contentBase: path.join(__dirname, "dist"),
