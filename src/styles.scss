@@ -1,7 +1,2 @@
-body {
-    background-color: pink;
-
-    p {
-        color: red;
-    }
-}
+@import "./styles/variables";
+@import "./styles/mixins";
