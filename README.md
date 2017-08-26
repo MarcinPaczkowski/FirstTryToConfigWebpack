@@ -1,1 +1,1 @@
-# WeeklyWebDevChallengeIssue02
+# FirstTryToConfigWebpack
