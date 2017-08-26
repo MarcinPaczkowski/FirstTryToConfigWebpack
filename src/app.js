@@ -1,3 +1,6 @@
-const css = require("./styles.scss");
+import './styles.scss';
 
-console.log("testtestest");
+console.log("Test if works.");
+
+const btn = $('.btn');
+console.log(btn);

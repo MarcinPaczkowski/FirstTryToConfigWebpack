@@ -1,2 +1,7 @@
-@import "./styles/variables";
-@import "./styles/mixins";
+@import './styles/variables';
+@import './styles/mixins';
+@import './styles/test';
+
+body {
+    background-color: red;
+}

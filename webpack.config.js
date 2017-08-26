@@ -1,40 +1,27 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const path = require("path");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
 
-const webpackConfig = {
+module.exports = {
     entry: './src/app.js',
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: 'app.bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'app.bundle.js',
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: 'WeeklyWebDevChallengeIssue02',
-            hash: true,
-            template: './src/index.html'
-        }),
-        new CleanWebpackPlugin(['dist']),
-        new ExtractTextPlugin({
-            filename: "styles.bundle.css",
-            disable: false,
-            allChunks: true
-        }),
-    ],
     module: {
         rules: [
         {
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                use: ['css-loader', 'sass-loader'],
-                publicPath: "/dist"
+                use: ['css-loader', 'sass-loader']
             })
         }, 
         {
             test: /\.js$/,
-            exclude: /(node_modules|bower_components)/,
+            exclude: /node_modules/,
             use: {
                 loader: 'babel-loader',
                 options: {
@@ -56,20 +43,17 @@ const webpackConfig = {
         {
             test: /\.html$/,
             use: [{
-                loader: 'html-loader',
-                options: {
-                    minimize: true
-                }
-            }
-        ]}
+                loader: 'html-loader'
+            }]
+        }      
     ]},
-    devServer: {
-        contentBase: path.join(__dirname, "dist"),
-        compress: true,
-        port: 8080,
-        stats: "errors-only",
-        open: true
-    }
+    plugins: [
+        new ExtractTextPlugin({
+            filename: "style.bundle.css"
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        }),
+        new CleanWebpackPlugin(['dist'])
+    ]
 };
-
-module.exports = webpackConfig; 
